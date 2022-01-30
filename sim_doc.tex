@@ -1,0 +1,45 @@
+\documentclass[11pt]{report}
+
+\usepackage[margin=1.4in]{geometry}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\begin{document}
+	
+	\title{\textbf{\Huge Development of detumbling prototype for a 1U CubeSat}}
+	\author{}
+	\date{}
+	\maketitle
+	
+
+	\titleformat{\chapter}[display]
+	{\Huge\bfseries}
+	{}
+	{0pt}
+	{\thechapter.\ }
+	\titlespacing*{\chapter}{0pt}{-50pt}{30pt}
+
+	\titleformat{name=\chapter,numberless}[display]
+	{\Huge\bfseries}
+	{}
+	{0pt}
+	{}
+	
+	\input{intro.tex}
+	
+	\input{cubesatsim.tex}
+	
+	\input{miniature helmholtz.tex}
+	
+	\input{ironcoreMagnetorquer.tex}
+	
+	\input{Helmholtz.tex}
+	
+	\input{equations.tex}
+	
+\end{document}

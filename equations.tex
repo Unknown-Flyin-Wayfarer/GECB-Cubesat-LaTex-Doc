@@ -1,0 +1,65 @@
+\chapter{Equations}
+
+\begin{equation}\label{cart2spheric}
+	\left.
+	\begin{array}{lll}
+		\rho = \sqrt{x^2+y^2+z^2}\\
+		\theta_E = \cos^{-1}\left(\frac{z}{\rho}\right)\\
+		\psi_E = \tan^{-1}\left(\frac{y}{x}\right)\\
+	\end{array}
+	\right \} \text{Cartesian to spherical coordinate conversion}
+\end{equation}
+
+\begin{equation}\label{spheric2latlong}
+	\left.
+	\begin{array}{lll}
+		\lambda_{LAT} = 90-\theta_E\frac{180}{\pi}\\
+		\lambda_{LON} = \psi_E\frac{180}{\pi}\\
+		h = \rho-R_E\\
+	\end{array}
+	\right \} \text{Latitude, Longitude and height}
+\end{equation}
+
+\begin{equation}\label{visviva}
+	v = \sqrt{\mu\left(\frac{2}{r}-\frac{1}{a}\right)}\hspace{15pt}\text{Vis-viva equation, NB: for the simulation }a\approx r
+\end{equation}
+
+\begin{equation}\label{rotinertial}
+	\dot{\vec{\omega}} = I^{-1}\left(T_{Propulsion} + T_{Magnetorquer} + T_{Reactionwheel} - \dot{\vec{\omega}}\times\vec{H} - \dot{I}\vec{\omega}\right)
+\end{equation}
+
+\begin{equation}\label{rk4}
+	\left.
+	\begin{array}{lll}
+		\vspace{5pt}\text{If,}\hspace{5pt}\frac{dy}{dx} = f\left(t_n,y_n\right)\hspace{5pt}\text{and}\hspace{5pt}y\left(t_n\right) = y_n\\
+		\vspace{5pt}k_1 = f\left(t_n,y_n\right)\\
+		\vspace{5pt}k_2 = f\left(t_n + \frac{h}{2},y_n + h\frac{k_1}{2}\right)\\
+		\vspace{5pt}k_3 = f\left(t_n + \frac{h}{2},y_n + h\frac{k_2}{2}\right)\\
+		\vspace{5pt}k_4 = f\left(t_n + h,y_n + hk_3\right)\\
+		\vspace{5pt}k = \frac{1}{6}\left(k_1 + 2k_2 + 2k_3 + k_4\right)\\
+		\vspace{5pt}y\left(t_n + h\right) = y_n + hk\\
+	\end{array}
+	\right \} \hspace{10pt}\text{RK4}
+\end{equation}
+
+\begin{equation}\label{euler2quart}
+	\left.
+	\begin{bmatrix}
+		q_0\\
+		q_1\\
+		q_2\\
+		q_3\\
+	\end{bmatrix}
+	= \begin{bmatrix}
+		\cos\left(\frac{\phi}{2}\right)\cos\left(\frac{\theta}{2}\right)\cos\left(\frac{\psi}{2}\right)+\sin\left(\frac{\phi}{2}\right)\sin\left(\frac{\theta}{2}\right)\sin\left(\frac{\psi}{2}\right)\\
+		\sin\left(\frac{\phi}{2}\right)\cos\left(\frac{\theta}{2}\right)\cos\left(\frac{\psi}{2}\right)-\cos\left(\frac{\phi}{2}\right)\sin\left(\frac{\theta}{2}\right)\sin\left(\frac{\psi}{2}\right)\\
+		\cos\left(\frac{\phi}{2}\right)\sin\left(\frac{\theta}{2}\right)\cos\left(\frac{\psi}{2}\right)+\sin\left(\frac{\phi}{2}\right)\cos\left(\frac{\theta}{2}\right)\sin\left(\frac{\psi}{2}\right)\\
+		\cos\left(\frac{\phi}{2}\right)\cos\left(\frac{\theta}{2}\right)\sin\left(\frac{\psi}{2}\right)-\sin\left(\frac{\phi}{2}\right)\sin\left(\frac{\theta}{2}\right)\cos\left(\frac{\psi}{2}\right)\\
+	\end{bmatrix}
+	\right \}\text{Euler to Quarternion conversion}
+\end{equation}
+
+\begin{equation}\label{filter}
+	X_{filtered} = S.X_{current} + \left(1-S\right)X_{previous} \hspace{7pt},
+	0 < S < 1\text{,S being the sensor reliabilty}
+\end{equation}
